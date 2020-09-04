@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" type="text/css">
 <nav class="navbar navbar-expand-sm bg-info navbar-dark sticky-top w-100">
     <div class="nav__container w-100 d-flex justify-content-around">
             <h1 class="p-2 lab_info">Вариант 2212</h1>

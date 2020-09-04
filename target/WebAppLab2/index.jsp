@@ -90,7 +90,6 @@
             </label>
         </div>
         <button id="submit-button" class="btn btn-light" type="submit">Отправить</button>
-        <button id="clear-button" class="btn btn-light" type="reset">Очистить</button>
     </form>
 </div>
 
