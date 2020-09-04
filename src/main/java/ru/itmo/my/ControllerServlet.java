@@ -24,13 +24,15 @@ public class ControllerServlet extends HttpServlet {
         String y = req.getParameter("y");
         String r = req.getParameter("r");
         if(x==null || y == null || r == null){
-           return;
+            req.getRequestDispatcher("/error.jsp").forward(req, resp);
+            return;
         }
         try{
             Double.parseDouble(x);
             Double.parseDouble(y);
             Double.parseDouble(r);
         }catch (NumberFormatException e){
+            req.getRequestDispatcher("/error.jsp").forward(req, resp);
             return;
         }
         req.getRequestDispatcher("/area").forward(req, resp);

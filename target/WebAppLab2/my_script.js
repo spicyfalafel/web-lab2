@@ -8,7 +8,8 @@ let R_VALUES = [1, 1.5, 2, 2.5, 3];
 
 const yTextField = document.getElementById("y-text");
 const error = document.getElementById('value-validate-text');
-var yIsOk = false;
+let yIsOk = false;
+
 yTextField.addEventListener("input", function (event) {
     const yStr = this.value.replace(",", ".");
     if (!isNaN(yStr)) {
@@ -16,15 +17,18 @@ yTextField.addEventListener("input", function (event) {
             error.innerText = "OK"
             error.style.color = "green"
             yIsOk=true;
+            $("#submit-button").show();
         } else {
             error.innerText = "Not correct value: must be in [-5;5]"
             error.style.color = "red";
             yIsOk=false;
+            $("#submit-button").hide();
         }
     } else {
         error.innerText = "Please enter number only"
         error.style.color = "red";
         yIsOk=false;
+        $("#submit-button").hide();
     }
 })
 
@@ -41,19 +45,16 @@ function calculateY(y, r) {
     return GRAPH_HEIGHT/ 2 - y / r * R_PIXELS_ON_GRAPH;
 }
 
-const clearButt = document.getElementById("clear-button");
-clearButt.addEventListener('click', function (e) {
-    e.preventDefault();
-})
-
 
 $("input:checkbox").click(function () {
-    var group = "input:checkbox[name='" + $(this).prop("name") + "']";
+    const group = "input:checkbox[name='" + $(this).prop("name") + "']";
     $(group).prop("checked", false);
     $(this).prop("checked", true);
 }).on("change", e=>{
     changePoint();
 });
+
+
 
 yTextField.addEventListener('change', e => {
     changePoint();
