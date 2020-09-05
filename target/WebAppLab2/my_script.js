@@ -3,8 +3,6 @@ const GRAPH_WIDTH = 300;
 const GRAPH_HEIGHT = 300;
 const R_PIXELS_ON_GRAPH = 70;
 
-let X_VALUES = [-3, -2, -1, 0, 1, 2, 3, 4, 5];
-let R_VALUES = [1, 1.5, 2, 2.5, 3];
 
 const yTextField = document.getElementById("y-text");
 const error = document.getElementById('value-validate-text');
@@ -66,7 +64,7 @@ $("input:radio").on("change", e =>{
 
 function changePoint() {
     let point = $("#point");
-    var formData = new FormData(document.getElementById("coordinates-form"));
+    const formData = new FormData(document.getElementById("coordinates-form"));
     const x = formData.get("x"), y = formData.get("y").replace(',', '.'), r = formData.get("r");
     const xGraph = calculateX(x, r), yGraph = calculateY(y, r);
     point.attr({
@@ -75,3 +73,24 @@ function changePoint() {
         visibility: "visible"
     });
 }
+
+
+
+$("#graph").click(evt => {
+    const e = evt.target;
+    const dim = e.getBoundingClientRect();
+    const x = evt.clientX - dim.left;
+    const y = evt.clientY - dim.top;
+    alert("x: "+x+" y:"+y+"\n" +
+        "x: "+toGraphX(x)+" y:"+toGraphY(y));
+})
+
+function toGraphX(x) {
+    return x - GRAPH_WIDTH/2;
+}
+
+function toGraphY(y) {
+    return y + GRAPH_HEIGHT/2;
+}
+
+
