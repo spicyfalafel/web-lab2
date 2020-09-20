@@ -1,0 +1,156 @@
+.r-value-button {
+    display: inline-block;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 50%, #9EEFE1 100%);
+    background-size: 200% auto;
+    transition: .5s;
+    padding: 5px;
+    width: 50px;
+    margin: 15% 10px;
+    font-weight: bold;
+}
+
+.r-value-button:hover {
+    box-shadow: 0 0 10px 7px green;
+}
+
+.r-value-selected-button {
+    background: hotpink;
+    border: 2px solid green;
+    border-radius: 4px;
+    padding: 5px;
+    width: 50px;
+    margin: 15% 10px;
+    color: white;
+    box-shadow: 0 0 10px 7px green;
+}
+
+#r-value{
+    border: white solid 2px;
+    border-radius: 5px;
+    padding: 3px;
+    width: 150px;
+    margin: 2% 10px;
+    transition: .5s;
+    font-weight: bold;
+    font-size: 1.07em;
+    text-align-last: center;
+    background-image: linear-gradient(to right, red 0%, orange 17%, yellow 34%, green 50%, deepskyblue 67%, blue 84%, purple 100%);
+    background-size: 150% auto;
+}
+
+#r-value:hover {
+    box-shadow: 0 0 10px 7px green;
+    background-position: right center;
+}
+
+.element-of-form {
+    margin: 3%;
+}
+
+.control-button {
+    background: #00008b;
+    color: white;
+    padding: 10%;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 3px;
+    width: 100px;
+    transition: .5s;
+}
+
+.control-button:hover {
+    box-shadow: 0 0 8px 8px green;
+    background-color: rgba(0, 0, 139, 0.7);
+}
+
+.data-form {
+    text-align: center;
+    flex: 1;
+    background: mediumaquamarine;
+    margin: 6px;
+    border-radius: 14px;
+}
+
+.radio-row {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.radio {
+    margin: 1%;
+}
+
+.inner-label {
+    width: 10px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 2px;
+}
+
+.buttons-line {
+    display: flex;
+    justify-content: center;
+}
+
+#y-value {
+    border: 4px solid blue;
+    border-radius: 4px;
+    padding: 4px;
+    text-align: center;
+    font-size: 1.05em;
+    width: 45%;
+}
+
+#y-value:hover {
+    box-shadow: 0 0 5px 5px green;
+}
+
+#error-log {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    font-size: 18px;
+    width: 60%;
+    margin: 1% auto 1%;
+}
+
+.label {
+    font-style: italic;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 4px;
+    background: linear-gradient(to right, blue 0%, green 50%, red 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+}
+
+input[type="radio"]:hover {
+    box-shadow: 0 0 5px 5px green;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.control-buttons > div > div {
+    margin: 0 3%;
+}
+
+.table-buttons {
+    padding: 2%;
+}
+
+button[name="clearTable"] {
+    padding: 3%;
+}
+
+.control-buttons {
+    margin-bottom: 0;
+}
+
+

@@ -1,0 +1,66 @@
+#content{
+    width: 60%;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 5px;
+    background: bisque;
+    box-shadow: 0 0 10px 10px green;
+    font-family: sans-serif;
+}
+
+header{
+    font-family: monospace;
+    background: #222;
+    color: #fff;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    margin: -10px -10px 10px -10px;
+    padding: 10px 20px;
+}
+
+#github{
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#github a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: .5s;
+}
+
+#github a:hover{
+    font-size: 1.1em;
+    color: darkcyan;
+}
+
+#student-name{
+    float: right;
+    margin-right: 2%;
+}
+
+.graphics-and-form{
+    display: flex;
+}
+
+@media (max-width: 1050px) {
+    .graphics-and-form{
+        flex-direction: column;
+    }
+
+    .graphics{
+        text-align: center;
+    }
+
+    #content{
+        width: 630px;
+    }
+}
+
+@media (max-width: 670px) {
+    #content {
+        width: auto;
+    }
+}

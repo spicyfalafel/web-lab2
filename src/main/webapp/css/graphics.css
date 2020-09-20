@@ -1,0 +1,14 @@
+.axis-text{
+    font-family: "Harlow Solid Italic", Serif,serif;
+    font-size: 16px;
+}
+
+.graphics{
+    margin: 2% 1%;
+    flex: 1;
+}
+
+.graphics svg{
+    margin: auto;
+    display: block;
+}
