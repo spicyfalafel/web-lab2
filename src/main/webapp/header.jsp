@@ -10,6 +10,6 @@
 <nav class="navbar navbar-expand-sm bg-info navbar-dark sticky-top w-100">
     <div class="nav__container w-100 d-flex justify-content-around">
             <h1 class="p-2 lab_info">Вариант 2212</h1>
-            <h1 class="p-2 lab_info"><a href="https://github.com/spicyfalafel">Кривошеев Святослав P3211</a></h1>
+            <h1 class="p-2 lab_info"><a href="https://github.com/spicyfalafel">Кривошеев Святослав и Дьяконов Михаил P3211</a></h1>
     </div>
 </nav>
