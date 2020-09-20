@@ -5,16 +5,4 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet>
-        <servlet-name>AreaCheckServlet</servlet-name>
-        <servlet-class>ru.itmo.angry_beavers.servlets.AreaCheckServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AreaCheckServlet</servlet-name>
-        <url-pattern>/area</url-pattern>
-    </servlet-mapping>
-
-
-
 </web-app>
