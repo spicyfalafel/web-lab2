@@ -4,12 +4,10 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <display-name>Web Lab2</display-name>
-
 
     <servlet>
         <servlet-name>AreaCheckServlet</servlet-name>
-        <servlet-class>ru.itmo.my.AreaCheckServlet</servlet-class>
+        <servlet-class>ru.itmo.angry_beavers.servlets.AreaCheckServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
