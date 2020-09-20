@@ -9,7 +9,7 @@
 
     <servlet>
         <servlet-name>AreaCheckServlet</servlet-name>
-        <servlet-class>ru.itmo.my.AreaCheckServlet</servlet-class>
+        <servlet-class>ru.itmo.angry_beavers.servlets.AreaCheckServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
