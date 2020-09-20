@@ -5,12 +5,16 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class QueryStorageService {
     private final ArrayList<Query> queries;
 
     public ArrayList<Query> getQueries() {
-        return queries;
+        ArrayList<Query> reservedQueries = new ArrayList<>(queries);
+        Collections.reverse(reservedQueries);
+        return reservedQueries;
     }
 
     private final SimpleDateFormat dateFormat;
@@ -32,39 +36,18 @@ public class QueryStorageService {
         queries.add(query);
     }
 
+    public ArrayList<Query> getFreshQueries(){
+        ArrayList<Query> freshQueries = queries.stream().filter(Query::isFresh).collect(Collectors.toCollection(ArrayList::new));
+        Collections.reverse(freshQueries);
+        return freshQueries;
+    }
+
     public void updateStatuses(){
         queries.forEach(query -> query.setFresh(false));
     }
 
-    public String getFreshQueriesTable(){
-        StringBuilder result = new StringBuilder();
-        queries.stream().filter(Query::isFresh).forEach(query -> addDataFromQuery(result, query));
-        return result.toString();
-    }
-
-    public String getQueriesTable() {
-        StringBuilder result = new StringBuilder();
-        queries.forEach(query -> addDataFromQuery(result, query));
-        return result.toString();
-    }
-
     public SimpleDateFormat getDateFormat() {
         return dateFormat;
-    }
-
-    private void addDataFromQuery(StringBuilder result, Query query){
-        result.append("<div class=\"table-row\">");
-        result.append("<div>").append(getNumberView(query.getX())).append("</div>");
-        result.append("<div>").append(getNumberView(query.getY())).append("</div>");
-        result.append("<div>").append(getNumberView(query.getR())).append("</div>");
-        result.append("<div>").append(dateFormat.format(query.getQueryTime())).append("</div>");
-        result.append(getResultView(query.isResult()));
-        result.append("</div>");
-    }
-
-    private String getResultView(boolean result) {
-        return result ? "<div style=\"color: green\">In the area</div>" :
-                "<div style=\"color: red\">Outside the area</div>";
     }
 
     private double getNumberView(double number){

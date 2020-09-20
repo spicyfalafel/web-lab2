@@ -1,13 +1,5 @@
-<%@ page import="ru.itmo.angry_beavers.models.QueryStorageService" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-    QueryStorageService qss = (QueryStorageService) session.getAttribute("qss");
-    String tableContent = "";
-    if (qss != null) {
-        tableContent = qss.getFreshQueriesTable();
-    }
-%>
 <html>
 <head>
     <title>Results</title>
@@ -36,7 +28,17 @@
             <div>Result</div>
         </div>
         <div class="table-content">
-            <%= tableContent %>
+            <jsp:useBean id="qss" scope="session" class="ru.itmo.angry_beavers.models.QueryStorageService"/>
+            <c:forEach var="query" items="${qss.freshQueries}">
+                <div class="table-row">
+                    <div>${query.x}</div>
+                    <div>${query.y}</div>
+                    <div>${query.r}</div>
+                    <div>${qss.dateFormat.format(query.queryTime)}</div>
+                        ${query.result ? "<div style=\"color: green\">In the area</div>" :
+                                "<div style=\"color: red\">Outside the area</div>"}
+                </div>
+            </c:forEach>
         </div>
     </div>
 
