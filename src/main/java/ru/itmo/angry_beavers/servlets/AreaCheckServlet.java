@@ -12,6 +12,14 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
+/*
+TODO
+ buttons
+ graph & graph validation
+ R
+ POST
+
+ */
 @WebServlet("/check_area")
 public class AreaCheckServlet extends HttpServlet {
     @Override

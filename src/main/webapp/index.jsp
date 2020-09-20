@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/graphics.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/hover.css">
     <link rel="icon" href="img/favicon.jpg" type="img/jpg">
 </head>
 <body>
@@ -25,80 +26,38 @@
             <form id="data-form" action="controller" method="post" name="dataForm">
                 <div class="for-y element-of-form">
                     <div class="label">
-                        <label for="y-value">Y value:</label>
+                        <label>Y value:</label>
                     </div>
-                    <div>
-                        <input id="y-value" type="text" name="y-value" placeholder="value from -3 to 5" maxlength="20">
-                    </div>
+                    <input class="text-input" type="text" name="y-value" placeholder="value from -3 to 5" maxlength="20">
+
                 </div>
                 <div class="for-x element-of-form">
                     <div class="label">
                         <label>X value:</label>
                     </div>
-                    <div class="radio-row">
-                        <div class="radio">
-                            <div class="inner-label">-5</div>
-                            <input type="radio" name="x-value" value="-5">
-                        </div>
-                        <div class="radio">
-                            <div class="inner-label">-4</div>
-                            <input type="radio" name="x-value" value="-4">
-                        </div>
-                        <div class="radio">
-                            <div class="inner-label">-3</div>
-                            <input type="radio" name="x-value" value="-3">
-                        </div>
-                    </div>
-                    <div class="radio-row">
-                        <div class="radio">
-                            <div class="inner-label">-2</div>
-                            <input type="radio" name="x-value" value="-2">
-                        </div>
-                        <div class="radio">
-                            <div class="inner-label">-1</div>
-                            <input type="radio" name="x-value" value="-1">
-                        </div>
-                        <div class="radio">
-                            <div class="inner-label">0</div>
-                            <input type="radio" name="x-value" value="0">
-                        </div>
-                    </div>
-                    <div class="radio-row">
-                        <div class="radio">
-                            <div class="inner-label">1</div>
-                            <input type="radio" name="x-value" value="1">
-                        </div>
-                        <div class="radio">
-                            <div class="inner-label">2</div>
-                            <input type="radio" name="x-value" value="2">
-                        </div>
-                        <div class="radio">
-                            <div class="inner-label">3</div>
-                            <input type="radio" name="x-value" value="3">
-                        </div>
-                    </div>
+                    <button type="button" class="rainbow-button hvr-grow">-4</button>
+                    <button type="button" class="rainbow-button hvr-grow" >-3</button>
+                    <button type="button" class="rainbow-button hvr-grow">-2</button>
+                    <button type="button" class="rainbow-button hvr-grow">-1</button>
+                    <button type="button" class="rainbow-button hvr-grow">0</button>
+                    <button type="button" class="rainbow-button hvr-grow">1</button>
+                    <button type="button" class="rainbow-button hvr-grow">2</button>
+                    <button type="button" class="rainbow-button hvr-grow">3</button>
+                    <button type="button" class="rainbow-button hvr-grow">4</button>
                 </div>
                 <div class="for-r element-of-form">
                     <div class="label">
                         <label>R value:</label>
                     </div>
-                    <div id="r-value-select">
-                        <select name="r-value" id="r-value" >
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
+                    <input class="text-input" type="text" placeholder="value in (2...5)" maxlength="20">
                 </div>
                 <div class="control-buttons element-of-form">
                     <div class="form-buttons">
                         <div>
-                            <button class="control-button" type="submit" name="btn-submit">Submit</button>
+                            <button class="control-button hvr-grow" type="submit" name="btn-submit">Submit</button>
                         </div>
                         <div>
-                            <button class="control-button" type="reset" name="reset">Reset</button>
+                            <button class="control-button hvr-grow" type="reset" name="reset">Reset</button>
                         </div>
                     </div>
                 </div>
@@ -119,14 +78,14 @@
             <jsp:useBean id="qss" scope="session" class="ru.itmo.angry_beavers.models.QueryStorageService"/>
             ${qss.updateStatuses()}
             <c:forEach var="query" items="${qss.queries}">
-            <div class="table-row">
-                <div>${query.x}</div>
-                <div>${query.y}</div>
-                <div>${query.r}</div>
-                <div>${qss.dateFormat.format(query.queryTime)}</div>
-                ${query.result ? "<div style=\"color: green\">In the area</div>" :
-                        "<div style=\"color: red\">Outside the area</div>"}
-            </div>
+                <div class="table-row">
+                    <div>${query.x}</div>
+                    <div>${query.y}</div>
+                    <div>${query.r}</div>
+                    <div>${qss.dateFormat.format(query.queryTime)}</div>
+                        ${query.result ? "<div style=\"color: green\">In the area</div>" :
+                                "<div style=\"color: red\">Outside the area</div>"}
+                </div>
             </c:forEach>
         </div>
     </div>

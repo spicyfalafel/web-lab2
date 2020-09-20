@@ -9,10 +9,6 @@
     font-weight: bold;
 }
 
-.r-value-button:hover {
-    box-shadow: 0 0 10px 7px green;
-}
-
 .r-value-selected-button {
     background: hotpink;
     border: 2px solid green;
@@ -24,24 +20,22 @@
     box-shadow: 0 0 10px 7px green;
 }
 
-#r-value{
+.rainbow-button{
     border: white solid 2px;
     border-radius: 5px;
     padding: 3px;
-    width: 150px;
+    width: 50px;
+    height: 30px;
     margin: 2% 10px;
     transition: .5s;
     font-weight: bold;
+    color: darkslateblue;
     font-size: 1.07em;
     text-align-last: center;
     background-image: linear-gradient(to right, red 0%, orange 17%, yellow 34%, green 50%, deepskyblue 67%, blue 84%, purple 100%);
     background-size: 150% auto;
 }
 
-#r-value:hover {
-    box-shadow: 0 0 10px 7px green;
-    background-position: right center;
-}
 
 .element-of-form {
     margin: 3%;
@@ -58,10 +52,6 @@
     transition: .5s;
 }
 
-.control-button:hover {
-    box-shadow: 0 0 8px 8px green;
-    background-color: rgba(0, 0, 139, 0.7);
-}
 
 .data-form {
     text-align: center;
@@ -96,17 +86,13 @@
     justify-content: center;
 }
 
-#y-value {
+.text-input{
     border: 4px solid blue;
     border-radius: 4px;
     padding: 4px;
     text-align: center;
     font-size: 1.05em;
     width: 45%;
-}
-
-#y-value:hover {
-    box-shadow: 0 0 5px 5px green;
 }
 
 #error-log {
@@ -126,10 +112,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% auto;
-}
-
-input[type="radio"]:hover {
-    box-shadow: 0 0 5px 5px green;
 }
 
 .form-buttons {
