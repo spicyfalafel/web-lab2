@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="models.QueryStorageService" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="ru.itmo.angry_beavers.models.QueryStorageService" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="en">
 <head>
@@ -116,7 +116,7 @@
         </div>
         <div class="table-content">
             <!--TODO new queries in the top -->
-            <jsp:useBean id="qss" scope="session" class="models.QueryStorageService"/>
+            <jsp:useBean id="qss" scope="session" class="ru.itmo.angry_beavers.models.QueryStorageService"/>
             ${qss.updateStatuses()}
             <c:forEach var="query" items="${qss.queries}">
             <div class="table-row">

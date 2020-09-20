@@ -7,16 +7,4 @@
     <display-name>Web Lab2</display-name>
 
 
-    <servlet>
-        <servlet-name>AreaCheckServlet</servlet-name>
-        <servlet-class>ru.itmo.angry_beavers.servlets.AreaCheckServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AreaCheckServlet</servlet-name>
-        <url-pattern>/area</url-pattern>
-    </servlet-mapping>
-
-
-
 </web-app>
