@@ -27,7 +27,7 @@
     width: 50px;
     height: 30px;
     margin: 2% 10px;
-    transition: .5s;
+    transition: .3s;
     font-weight: bold;
     color: darkslateblue;
     font-size: 1.07em;
@@ -35,7 +35,6 @@
     background-image: linear-gradient(to right, red 0%, orange 17%, yellow 34%, green 50%, deepskyblue 67%, blue 84%, purple 100%);
     background-size: 150% auto;
 }
-
 
 .element-of-form {
     margin: 3%;

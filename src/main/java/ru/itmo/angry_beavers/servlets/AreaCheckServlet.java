@@ -21,7 +21,8 @@ TODO
 
  */
 @WebServlet("/check_area")
-public class AreaCheckServlet extends HttpServlet {
+public class
+AreaCheckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
