@@ -35,15 +35,15 @@
                     <div class="label">
                         <label>X value:</label>
                     </div>
-                    <button type="button" class="rainbow-button hvr-grow">-4</button>
-                    <button type="button" class="rainbow-button hvr-grow" >-3</button>
-                    <button type="button" class="rainbow-button hvr-grow">-2</button>
-                    <button type="button" class="rainbow-button hvr-grow">-1</button>
-                    <button type="button" class="rainbow-button hvr-grow">0</button>
-                    <button type="button" class="rainbow-button hvr-grow">1</button>
-                    <button type="button" class="rainbow-button hvr-grow">2</button>
-                    <button type="button" class="rainbow-button hvr-grow">3</button>
-                    <button type="button" class="rainbow-button hvr-grow">4</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">-4</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow" >-3</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">-2</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">-1</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">0</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">1</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">2</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">3</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">4</button>
                 </div>
                 <div class="for-r element-of-form">
                     <div class="label">

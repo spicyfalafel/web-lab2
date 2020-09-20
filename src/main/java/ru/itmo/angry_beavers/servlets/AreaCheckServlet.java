@@ -54,16 +54,20 @@ public class AreaCheckServlet extends HttpServlet {
 
     private boolean getResult(double x, double y, double r) {
         // 1 quarter
-        if (x >= 0 && y >= 0 && y <= r / 2 - x / 2) {
+
+        boolean qOne = x >= 0 && y >= 0;
+        if (qOne && y*y+ x*x <= r*r) {
             return true;
         }
 
         // 2 quarter
-        if (x <= 0 && y >= 0 && x >= -r && y <= r / 2) {
+        boolean qTwo = x <= 0 && y >= 0;
+        if (qTwo && x >= -r/2 && y <= 2*x + r ) {
             return true;
         }
 
         // 4 quarter
-        return x >= 0 && y <= 0 && x * x + y * y <= r * r;
+        boolean qFour = x >= 0 && y <= 0;
+        return  qFour && x<=r/2 && y>=-r;
     }
 }
