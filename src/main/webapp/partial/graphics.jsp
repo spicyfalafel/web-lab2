@@ -25,9 +25,9 @@
         <text x="157" y="275" class="axis-text">-R</text>
 
         <!-- draw figures - -->
-        <polygon points="150,150 270,150 150,90" fill="#00f" stroke="#003" fill-opacity="0.5"></polygon>
-        <rect height="60" width="120" x="30" y="90" fill-opacity="0.5" fill="#a0f" stroke="#003"></rect>
-        <path fill="chocolate" stroke="#003" d="M 150,270 L 150,150 L 270,150 A 120,120 90 0 1 150,270"
+        <polygon points="90,150 150,30 150,150" fill="#00f" stroke="#003" fill-opacity="0.5"></polygon>
+        <rect height="120" width="60" x="150" y="150" fill-opacity="0.5" fill="#a0f" stroke="#003"></rect>
+        <path fill="chocolate" stroke="#003" d="M 270,150 L 150,150 L 150,30 A 120,120 0 0 1 270,150"
               fill-opacity="0.5"></path>
     </svg>
 </div>
