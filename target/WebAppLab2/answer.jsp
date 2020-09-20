@@ -1,55 +1,52 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="ru.itmo.my.models.PointRequest" %>
-<%@ page import="ru.itmo.my.models.ReqHolder" %>
-
-<%@ page language="java" contentType="text/html; charset=utf-8"
-         pageEncoding="utf-8" %>
-<%request.setCharacterEncoding("UTF-8");%>
-
+<%@ page import="models.QueryStorageService" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    QueryStorageService qss = (QueryStorageService) session.getAttribute("qss");
+    String tableContent = "";
+    if (qss != null) {
+        tableContent = qss.getFreshQueriesTable();
+    }
+%>
 <html>
 <head>
-    <title>Web lab 2</title>
+    <title>Results</title>
     <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="icon" href="${pageContext.request.contextPath}/res/ukraine.png" type="image/png">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/table.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css" type="text/css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/input.css" type="text/css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/graphics.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/home_button.css">
+    <link rel="icon" href="img/favicon.jpg" type="img/jpg">
 </head>
 <body>
-<jsp:include page="header.jsp"/>
-<div class="d-flex flex-row bd-highlight mb-3">
 
-    <div class="d-flex flex-column bd-highlight m-3" style="">
-        <jsp:include page="graph.jsp"/>
-        <br> <!-- kek -->
-        <a href="index.jsp" type="button" class="btn btn-secondary btn-lg" id="back-to-index-button">GO BACK</a>
+<jsp:include page="partial/header.jsp"/>
+
+<div id="content">
+    <jsp:include page="partial/graphics.jsp"/>
+
+    <div class="table">
+        <div class="table-header">
+            <div>X</div>
+            <div>Y</div>
+            <div>R</div>
+            <div>Current time</div>
+            <div>Result</div>
+        </div>
+        <div class="table-content">
+            <%= tableContent %>
+        </div>
     </div>
 
-    <table id="result-table" class="result-table">
-        <tr class="result-table-row">
-            <th>X</th>
-            <th>Y</th>
-            <th>R</th>
-            <th>RESULT</th>
-            <th>TIME</th>
-        </tr>
-        <%
-            ReqHolder holder = (ReqHolder) session.getAttribute("reqHolder");
-            if (holder != null) {
-                out.println(holder.toTable());
-            }
-        %>
-    </table>
+    <div id="home-button">
+        <a href="index.jsp">To Home Page</a>
+    </div>
 </div>
+
+<script src="js/jquery.js"></script>
+<script src="js/graphics.js"></script>
+<script src="js/table.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 package ru.itmo.angry_beavers.servlets;
 
-import models.Query;
-import models.QueryStorageService;
+import ru.itmo.angry_beavers.models.Query;
+import ru.itmo.angry_beavers.models.QueryStorageService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
