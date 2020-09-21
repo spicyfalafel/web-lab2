@@ -36,9 +36,13 @@ header{
     color: darkcyan;
 }
 
-#student-name{
+#right-header{
     float: right;
     margin-right: 2%;
+}
+
+#variant{
+    float: right;
 }
 
 .graphics-and-form{

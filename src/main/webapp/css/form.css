@@ -60,26 +60,6 @@
     border-radius: 14px;
 }
 
-.radio-row {
-    width: 60%;
-    margin: 0 auto;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-}
-
-.radio {
-    margin: 1%;
-}
-
-.inner-label {
-    width: 10px;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin: 2px;
-}
-
 .buttons-line {
     display: flex;
     justify-content: center;
@@ -120,14 +100,6 @@
 
 .control-buttons > div > div {
     margin: 0 3%;
-}
-
-.table-buttons {
-    padding: 2%;
-}
-
-button[name="clearTable"] {
-    padding: 3%;
 }
 
 .control-buttons {
