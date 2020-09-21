@@ -18,11 +18,9 @@ TODO
  graph & graph validation
  R
  POST
-
  */
 @WebServlet("/check_area")
-public class
-AreaCheckServlet extends HttpServlet {
+public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
@@ -57,18 +55,18 @@ AreaCheckServlet extends HttpServlet {
         // 1 quarter
 
         boolean qOne = x >= 0 && y >= 0;
-        if (qOne && y*y+ x*x <= r*r) {
+        if (qOne && y * y + x * x <= r * r) {
             return true;
         }
 
         // 2 quarter
         boolean qTwo = x <= 0 && y >= 0;
-        if (qTwo && x >= -r/2 && y <= 2*x + r ) {
+        if (qTwo && x >= -r / 2 && y <= 2 * x + r) {
             return true;
         }
 
         // 4 quarter
         boolean qFour = x >= 0 && y <= 0;
-        return  qFour && x<=r/2 && y>=-r;
+        return qFour && x <= r / 2 && y >= -r;
     }
 }

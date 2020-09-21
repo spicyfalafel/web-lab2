@@ -1,12 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="ru.itmo.angry_beavers.models.QueryStorageService" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>First web laboratory work</title>
+    <title>Second web laboratory work</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/graphics.css">
     <link rel="stylesheet" href="css/form.css">
@@ -28,7 +27,7 @@
                     <div class="label">
                         <label>Y value:</label>
                     </div>
-                    <input class="text-input" type="text" name="y-value" placeholder="value from -3 to 5" maxlength="20">
+                    <input class="text-input" type="text" name="y-value" placeholder="value in (-3...5)" maxlength="20">
 
                 </div>
                 <div class="for-x element-of-form">
@@ -36,7 +35,7 @@
                         <label>X value:</label>
                     </div>
                     <button type="button" name="x-value" class="rainbow-button hvr-grow">-4</button>
-                    <button type="button" name="x-value" class="rainbow-button hvr-grow" >-3</button>
+                    <button type="button" name="x-value" class="rainbow-button hvr-grow">-3</button>
                     <button type="button" name="x-value" class="rainbow-button hvr-grow">-2</button>
                     <button type="button" name="x-value" class="rainbow-button hvr-grow">-1</button>
                     <button type="button" name="x-value" class="rainbow-button hvr-grow">0</button>
@@ -49,7 +48,7 @@
                     <div class="label">
                         <label>R value:</label>
                     </div>
-                    <input class="text-input" type="text" placeholder="value in (2...5)" maxlength="20">
+                    <input class="text-input" type="text" name="r-value" placeholder="value in (2...5)" maxlength="20">
                 </div>
                 <div class="control-buttons element-of-form">
                     <div class="form-buttons">
@@ -74,7 +73,6 @@
             <div>Result</div>
         </div>
         <div class="table-content">
-            <!--TODO new queries in the top -->
             <jsp:useBean id="qss" scope="session" class="ru.itmo.angry_beavers.models.QueryStorageService"/>
             ${qss.updateStatuses()}
             <c:forEach var="query" items="${qss.queries}">

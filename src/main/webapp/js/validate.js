@@ -1,6 +1,6 @@
 const X_INVALID_MESSAGE = "Select X value";
 const Y_INVALID_MESSAGE = "Fix Y value";
-const R_INVALID_MESSAGE = "Select R value";
+const R_INVALID_MESSAGE = "Fix R value";
 
 function checkYInput() {
     const element = $("#y-value");

@@ -4,45 +4,39 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.stream.Collectors;
 
 public class QueryStorageService {
-    private final ArrayList<Query> queries;
+    private final Deque<Query> queries;
 
-    public ArrayList<Query> getQueries() {
-        ArrayList<Query> reservedQueries = new ArrayList<>(queries);
-        Collections.reverse(reservedQueries);
-        return reservedQueries;
+    public Deque<Query> getQueries() {
+        return queries;
     }
 
     private final SimpleDateFormat dateFormat;
 
     public QueryStorageService() {
-        // default
-        this(new SimpleDateFormat("HH:mm:ss"));
-    }
-
-    public QueryStorageService(SimpleDateFormat dateFormat) {
-        this.dateFormat = dateFormat;
-        queries = new ArrayList<>();
+        dateFormat = new SimpleDateFormat("HH:mm:ss");
+        queries = new ArrayDeque<>();
     }
 
     public void addQuery(Query query) {
         query.setX(getNumberView(query.getX()));
         query.setY(getNumberView(query.getY()));
         query.setR(getNumberView(query.getR()));
-        queries.add(query);
+        queries.addFirst(query);
     }
 
-    public ArrayList<Query> getFreshQueries(){
-        ArrayList<Query> freshQueries = queries.stream().filter(Query::isFresh).collect(Collectors.toCollection(ArrayList::new));
-        Collections.reverse(freshQueries);
-        return freshQueries;
+    public Deque<Query> getFreshQueries() {
+        return queries
+                .stream()
+                .filter(Query::isFresh)
+                .collect(Collectors.toCollection(ArrayDeque::new));
     }
 
-    public void updateStatuses(){
+    public void updateStatuses() {
         queries.forEach(query -> query.setFresh(false));
     }
 
@@ -50,7 +44,8 @@ public class QueryStorageService {
         return dateFormat;
     }
 
-    private double getNumberView(double number){
+    // round to 7 digits
+    private double getNumberView(double number) {
         MathContext context = new MathContext(7, RoundingMode.HALF_UP);
         BigDecimal result = new BigDecimal(number, context);
         return Double.parseDouble(String.valueOf(result));
