@@ -45,3 +45,7 @@ $("#data-form").keydown(function (event){
         $('button[name=\"btn-submit\"]').click();
     }
 });
+
+$('button[name="reset"]').click(function(){
+    $('.rainbow-button.hvr-grow.active').removeClass("active");
+});

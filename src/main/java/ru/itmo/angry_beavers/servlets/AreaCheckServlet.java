@@ -14,8 +14,6 @@ import java.util.Date;
 
 /*
 TODO
- buttons
- graph & graph validation
  R
  POST
  */
