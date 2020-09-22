@@ -31,11 +31,10 @@ function checkY() {
 }
 
 function checkX() {
-    if($(".for-x input[type=\"radio\"]:checked").val() === undefined){
+    /*if($(".for-x input[type=\"radio\"]:checked").val() === undefined){
         writeErrorMessage(X_INVALID_MESSAGE);
         return false;
-    }
-    writeErrorMessage("");
+    }*/
     return true;
 }
 
@@ -48,6 +47,7 @@ function checkR() {
         writeErrorMessage(R_INVALID_MESSAGE);
         return false;
     }
+    writeErrorMessage("");
     return true;
 }
 

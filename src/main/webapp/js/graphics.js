@@ -1,8 +1,15 @@
 const CANVAS_WIDTH = 300;
 const CANVAS_HEIGHT = 300;
 const CANVAS_R_VALUE = 120;
-const DEFAULT_R_VALUE = 1;
+const DEFAULT_R_VALUE = 2;
 const plot = $(".graphics svg");
+/*
+TODO
+Handle invalid r
+Classes for x buttons
+Sending with ajax
+Test it
+ */
 
 function fromRToSvgX(x, r) {
     return x / r * CANVAS_R_VALUE + CANVAS_WIDTH / 2;
@@ -21,11 +28,11 @@ function fromSvgToRY(y, r) {
 }
 
 function getRValue() {
-    const rText = $("#r-value option:selected").text();
+    const rText = $('input[name="r-value"]').val();
     let rValue = parseFloat(rText);
     // if there is answer page without form
     if (isNaN(rValue)) {
-        rValue = parseFloat($(".table-row").last().find(">:nth-child(3)").text());
+        rValue = parseFloat($(".table-row").firstChild.find(">:nth-child(3)").text());
         // if somebody send get request to /controller then table will be empty
         if(isNaN(rValue)){
             rValue = DEFAULT_R_VALUE;
@@ -62,7 +69,6 @@ function clickPlotHandler(e) {
             } else {
                 document.location.reload();
             }
-
         }
     })
 }
