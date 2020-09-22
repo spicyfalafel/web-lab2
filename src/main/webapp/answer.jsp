@@ -48,6 +48,7 @@
 </div>
 
 <script src="js/jquery.js"></script>
+<script src="js/validate.js"></script>
 <script src="js/graphics.js"></script>
 <script src="js/table.js"></script>
 </body>

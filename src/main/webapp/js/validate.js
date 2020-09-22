@@ -23,7 +23,7 @@ function checkInput(min, max, element) {
 }
 
 function checkY() {
-    if(!checkInput(Y_MIN_VALUE, Y_MAX_VALUE, Y_ELEMENT)){
+    if (!checkInput(Y_MIN_VALUE, Y_MAX_VALUE, Y_ELEMENT)) {
         writeErrorMessage(Y_INVALID_MESSAGE);
         return false;
     }
@@ -32,11 +32,10 @@ function checkY() {
 }
 
 function checkX() {
-
-    if($('.rainbow-button.active').val()===undefined){
+    if ($('.rainbow-button.active').val() === undefined) {
         writeErrorMessage(X_INVALID_MESSAGE);
         return false;
-    }else{
+    } else {
         return true;
     }
 }
@@ -46,7 +45,7 @@ function writeErrorMessage(message) {
 }
 
 function checkR() {
-    if(!checkInput(R_MIN_VALUE, R_MAX_VALUE, R_ELEMENT)){
+    if (!checkInput(R_MIN_VALUE, R_MAX_VALUE, R_ELEMENT)) {
         writeErrorMessage(R_INVALID_MESSAGE);
         return false;
     }

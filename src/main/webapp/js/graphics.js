@@ -5,9 +5,6 @@ const DEFAULT_R_VALUE = 2;
 const plot = $(".graphics svg");
 /*
 TODO
-Handle invalid r
-Classes for x buttons
-Sending with ajax
 Test it
  */
 
@@ -31,16 +28,22 @@ function fromSvgToRY(y, r) {
 function getRValue() {
     const rText = $('input[name="r-value"]').val();
     let rValue = parseFloat(rText);
+
     // if there is answer page without form
-    if (isNaN(rValue)) {
-        rValue = parseFloat($(".table-row").firstChild.find(">:nth-child(3)").text());
+    if (rText === undefined) {
+        rValue = parseFloat($(".table-row").first().find(">:nth-child(3)").text());
         // if somebody send get request to /controller then table will be empty
         if(isNaN(rValue)){
             rValue = DEFAULT_R_VALUE;
         }
+    } else {
+        if(!checkR()){
+            return null;
+        }
     }
     return rValue;
 }
+
 function getYValue() {
     return $('input[name ="y-value"]').val();
 }
@@ -60,25 +63,27 @@ function clickPlotHandler(e) {
     const y = e.pageY - offset.top;
     const rValue = getRValue();
 
-    const xValue = fromSvgToRX(x, rValue);
-    const yValue = fromSvgToRY(y, rValue);
+    if(rValue!==null) {
+        const xValue = fromSvgToRX(x, rValue);
+        const yValue = fromSvgToRY(y, rValue);
 
-    $.ajax({
-        type: "POST",
-        url: "controller",
-        data: {
-            "x-value": xValue,
-            "y-value": yValue,
-            "r-value": rValue
-        },
-        success: function () {
-            if (getUrlContext() !== "answer.jsp") {
-                document.location.href = "answer.jsp";
-            } else {
-                document.location.reload();
+        $.ajax({
+            type: "POST",
+            url: "controller",
+            data: {
+                "x-value": xValue,
+                "y-value": yValue,
+                "r-value": rValue
+            },
+            success: function () {
+                if (getUrlContext() !== "answer.jsp") {
+                    document.location.href = "answer.jsp";
+                } else {
+                    document.location.reload();
+                }
             }
-        }
-    })
+        })
+    }
 }
 
 plot.click(clickPlotHandler);
