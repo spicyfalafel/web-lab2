@@ -27,7 +27,7 @@
                     <div class="label">
                         <label>Y value:</label>
                     </div>
-                    <input class="text-input" type="text" name="y-value" placeholder="value in (-3...5)" maxlength="20">
+                    <input class="text-input" type="text" name="y-value" placeholder="value in (-3...5)" maxlength="16">
 
                 </div>
                 <div class="for-x element-of-form">
@@ -48,7 +48,7 @@
                     <div class="label">
                         <label>R value:</label>
                     </div>
-                    <input class="text-input" type="text" name="r-value" placeholder="value in (2...5)" maxlength="20">
+                    <input class="text-input" type="text" name="r-value" placeholder="value in (2...5)" maxlength="16">
                 </div>
                 <div class="control-buttons element-of-form">
                     <div class="form-buttons">

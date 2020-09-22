@@ -6,13 +6,14 @@ function onSubmitClick(e) {
     }
 }
 
-$("#y-value").keyup(checkYInput);
+$('input[name="y-value"]').keyup(checkY);
+$('input[name="r-value"]').keyup(checkR);
 
 $('button[name=\"btn-submit\"]').on("click", onSubmitClick);
 
 // handler enter key
+// enter key code = 13
 $("#data-form").keydown(function (event){
-    // enter key code = 13
     if(event.keyCode === 13){
         event.preventDefault();
         $('button[name=\"btn-submit\"]').click();

@@ -1,26 +1,32 @@
 const X_INVALID_MESSAGE = "Select X value";
 const Y_INVALID_MESSAGE = "Fix Y value";
 const R_INVALID_MESSAGE = "Fix R value";
+const Y_MAX_VALUE = 5;
+const Y_MIN_VALUE = -3;
+const R_MAX_VALUE = 5;
+const R_MIN_VALUE = 2;
+const Y_ELEMENT = $('input[name="y-value"]');
+const R_ELEMENT = $('input[name="r-value"]');
 
-function checkYInput() {
-    const element = $("#y-value");
-    let yText = element.val().replace(",", ".");
-    element.val(yText);
-    let yVal = parseFloat(yText);
-    if (/^(-?\d+)(\.\d+)?$/.test(yText) && yVal >= -3 && yVal <= 5) {
-        $(this).css("border-color", "green");
+function checkInput(min, max, element) {
+    let text = element.val().replace(",", ".");
+    element.val(text);
+    let val = parseFloat(text);
+    if (/^(-?\d+)(\.\d+)?$/.test(text) && val >= min && val <= max) {
+        $(element).css("border-color", "green");
         return true;
     } else {
-        $(this).css("border-color", "red");
+        $(element).css("border-color", "red");
         return false;
     }
 }
 
 function checkY() {
-    if(!checkYInput()){
+    if(!checkInput(Y_MIN_VALUE, Y_MAX_VALUE, Y_ELEMENT)){
         writeErrorMessage(Y_INVALID_MESSAGE);
         return false;
     }
+    writeErrorMessage("");
     return true;
 }
 
@@ -29,6 +35,7 @@ function checkX() {
         writeErrorMessage(X_INVALID_MESSAGE);
         return false;
     }
+    writeErrorMessage("");
     return true;
 }
 
@@ -37,7 +44,7 @@ function writeErrorMessage(message) {
 }
 
 function checkR() {
-    if($("#r-value option:selected").val() === undefined){
+    if(!checkInput(R_MIN_VALUE, R_MAX_VALUE, R_ELEMENT)){
         writeErrorMessage(R_INVALID_MESSAGE);
         return false;
     }
