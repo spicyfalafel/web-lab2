@@ -8,6 +8,7 @@ const R_MIN_VALUE = 2;
 const Y_ELEMENT = $('input[name="y-value"]');
 const R_ELEMENT = $('input[name="r-value"]');
 
+
 function checkInput(min, max, element) {
     let text = element.val().replace(",", ".");
     element.val(text);
@@ -31,11 +32,13 @@ function checkY() {
 }
 
 function checkX() {
-    /*if($(".for-x input[type=\"radio\"]:checked").val() === undefined){
+
+    if($('.rainbow-button.active').val()===undefined){
         writeErrorMessage(X_INVALID_MESSAGE);
         return false;
-    }*/
-    return true;
+    }else{
+        return true;
+    }
 }
 
 function writeErrorMessage(message) {
@@ -50,5 +53,3 @@ function checkR() {
     writeErrorMessage("");
     return true;
 }
-
-

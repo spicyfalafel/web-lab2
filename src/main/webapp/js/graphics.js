@@ -27,6 +27,7 @@ function fromSvgToRY(y, r) {
     return r * (CANVAS_HEIGHT / 2 - y) / CANVAS_R_VALUE;
 }
 
+
 function getRValue() {
     const rText = $('input[name="r-value"]').val();
     let rValue = parseFloat(rText);
@@ -39,6 +40,13 @@ function getRValue() {
         }
     }
     return rValue;
+}
+function getYValue() {
+    return $('input[name ="y-value"]').val();
+}
+
+function getXValue(){
+    return $('.rainbow-button.hvr-grow.active').text();
 }
 
 function getUrlContext() {

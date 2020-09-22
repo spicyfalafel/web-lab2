@@ -1,10 +1,36 @@
 function onSubmitClick(e) {
     e.preventDefault();
     if (checkX() && checkY() && checkR()) {
+        let x = parseFloat(getXValue());
+        let y = parseFloat(getYValue());
+        let r = parseFloat(getRValue());
         writeErrorMessage("");
-        document.getElementById("data-form").submit();
+
+        // ajax submit
+        $.ajax({
+            type: "POST",
+            url: "controller",
+            data: {
+                "x-value": x,
+                "y-value": y,
+                "r-value": r
+            },
+            success: function () {
+                if (getUrlContext() !== "answer.jsp") {
+                    document.location.href = "answer.jsp";
+                } else {
+                    document.location.reload();
+                }
+            }
+        });
     }
 }
+
+$('.rainbow-button.hvr-grow').click(function(){
+    $('.rainbow-button.hvr-grow').removeClass('active');
+    $(this).addClass('active');
+});
+
 
 $('input[name="y-value"]').keyup(checkY);
 $('input[name="r-value"]').keyup(checkR);
