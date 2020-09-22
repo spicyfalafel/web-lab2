@@ -26,7 +26,7 @@ function onSubmitClick(e) {
     }
 }
 
-$('.rainbow-button.hvr-grow').click(function(){
+$('.rainbow-button.hvr-grow').click(function () {
     $('.rainbow-button.hvr-grow').removeClass('active');
     $(this).addClass('active');
 });
@@ -39,13 +39,14 @@ $('button[name=\"btn-submit\"]').on("click", onSubmitClick);
 
 // handler enter key
 // enter key code = 13
-$("#data-form").keydown(function (event){
-    if(event.keyCode === 13){
+$("#data-form").keydown(function (event) {
+    if (event.keyCode === 13) {
         event.preventDefault();
         $('button[name=\"btn-submit\"]').click();
     }
 });
 
-$('button[name="reset"]').click(function(){
+$('button[name="reset"]').click(function () {
     $('.rainbow-button.hvr-grow.active').removeClass("active");
+    writeErrorMessage("");
 });
