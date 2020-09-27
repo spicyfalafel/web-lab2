@@ -20,22 +20,20 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            double x = Double.parseDouble(req.getParameter("x-value"));
-            double y = Double.parseDouble(req.getParameter("y-value"));
+            Double.parseDouble(req.getParameter("x-value"));
+            Double.parseDouble(req.getParameter("y-value"));
             double r = Double.parseDouble(req.getParameter("r-value"));
 
+
             if (r < R_MIN_VALUE || r > R_MAX_VALUE) {
-                throw new NullPointerException();
+                getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
+            }else{
+                getServletContext().getRequestDispatcher("/check_area").forward(req, resp);
             }
 
-            getServletContext().getRequestDispatcher("/check_area").forward(req, resp);
         } catch (NumberFormatException | NullPointerException e) {
             getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
         }
     }
 
-    private boolean checkData(double x, double y, double r) {
-        //todo advanced checking
-        return true;
-    }
 }
