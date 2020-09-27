@@ -1,5 +1,6 @@
 package ru.itmo.angry_beavers.models;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
@@ -8,14 +9,13 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.stream.Collectors;
 
-public class QueryStorageService {
+public class QueryStorageService implements Serializable {
     private final Deque<Query> queries;
+    private final SimpleDateFormat dateFormat;
 
     public Deque<Query> getQueries() {
         return queries;
     }
-
-    private final SimpleDateFormat dateFormat;
 
     public QueryStorageService() {
         dateFormat = new SimpleDateFormat("HH:mm:ss");

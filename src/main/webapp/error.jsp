@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Error in Lab</h1>
-<p>Stop breaking my lab, please...</p>
+<p>Stop breaking our lab, please...</p>
 <img src="img/error_face.jpg" alt="error face">
 </body>
 </html>
