@@ -1,8 +1,9 @@
 package ru.itmo.angry_beavers.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Query {
+public class Query implements Serializable {
     private double x;
     private double y;
     private double r;
