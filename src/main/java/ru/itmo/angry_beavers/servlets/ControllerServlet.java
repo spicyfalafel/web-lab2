@@ -27,7 +27,7 @@ public class ControllerServlet extends HttpServlet {
 
             if (r < R_MIN_VALUE || r > R_MAX_VALUE) {
                 getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
-            }else{
+            } else {
                 getServletContext().getRequestDispatcher("/check_area").forward(req, resp);
             }
 

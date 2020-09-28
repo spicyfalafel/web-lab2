@@ -12,11 +12,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
-/*
-TODO
- R
- POST
- */
 @WebServlet("/check_area")
 public class AreaCheckServlet extends HttpServlet {
     @Override
@@ -26,8 +21,6 @@ public class AreaCheckServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // todo separate this method
-
         double x = Double.parseDouble(req.getParameter("x-value"));
         double y = Double.parseDouble(req.getParameter("y-value"));
         double r = Double.parseDouble(req.getParameter("r-value"));
